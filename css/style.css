@@ -1,0 +1,295 @@
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif; 
+}
+
+/********* heading and search input *********/
+
+#title-search {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  margin: 2em auto;
+  padding: 0 1em;
+}
+
+.heading {
+  text-transform: uppercase;
+  text-align: center;
+  width: 100%;
+}
+
+#search {
+  height: 3em;
+  width: 100%;
+  border: 2px solid #aeafaf;
+  border-radius: 5px;
+  outline: none;
+  padding-left: 1em;
+  color: #4d4d4d;
+}
+
+#search,
+.employees-div,
+#next,
+#previous{
+  -webkit-transition: all 0.45s ease-in-out;
+  -moz-transition: all 0.45s ease-in-out;
+  -ms-transition: all 0.45s ease-in-out;
+  -o-transition: all 0.45s ease-in-out;
+}
+
+#search:focus,
+.employees-div:hover,
+#next:hover,
+#previous:hover {
+  box-shadow: 0 0 20px 2px rgba(81, 203, 238, 1);
+  border: 2px solid rgba(81, 203, 238, 1)
+}
+
+
+/************** main div ***************/
+
+#employees {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.employees-div {
+  display: flex;
+  /*flex-direction: column;*/
+  align-items: center;
+  justify-content: space-around;
+  margin: 1.2em 0;
+  padding: 10px;
+  width: 100%;
+  height: 120px;
+  border: 2px solid #aeafaf;
+  border-radius: 5px;
+}
+
+.employees-div,
+#close,
+#next,
+#previous {
+  cursor: pointer;
+}
+
+
+
+.employees-icon {
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+}
+
+.employees-name,
+.employees-city {
+  text-transform: capitalize;
+}
+
+.employees-email,
+.employees-city,
+.employees-username,
+.employees-phone,
+.employees-address,
+.employees-birthday {
+  color: #aeafaf;
+  font-size: .7em;
+  margin: .5em 0;
+}
+
+.employees-name {
+  font-size: .8em;
+}
+
+.employees-name,
+.heading {
+  color: #454647;
+}
+
+.extra-info-div {
+  border-top: 1px solid #aeafaf;
+  margin-top: 2em;
+  padding-top: 2em;
+}
+
+.extra-info-div,
+.employees-username {
+  display: none;
+}
+
+
+
+/********** modal window **********/
+
+#overlay {
+  width:100%;
+  height:100%;
+  display:none;
+  position:fixed;
+  top:0px;
+  left:0px;
+  background:rgba(0,0,0,.6);
+}
+
+#overlay-inner {
+  max-width:400px;
+  width:80%;
+  padding:40px;
+  position:absolute;
+  top:50%;
+  left:50%;
+  -webkit-transform:translate(-50%, -50%);
+  transform:translate(-50%, -50%);
+  border: 2px solid #aeafaf;
+  border-radius:5px;
+  background:#fff;
+  text-align: center;
+}
+
+#close {
+  position: absolute;
+  top: 25%;
+  left: 70%;
+  font-size: 2em;
+  z-index: 1000;
+}
+
+#previous,
+#next {
+  width: 40px;
+  height: 40px;
+  font-size: 2em;
+  line-height: 1;
+  text-align: center;
+  position: absolute;
+  z-index: 1000;
+  background-color: #fff;
+  border: 2px solid #aeafaf;
+  border-radius: 50%;
+  color: #808282;
+}
+
+#previous {
+  top: 45%;
+  left: 1%;
+}
+
+#next {
+  top: 45%;
+  right: 1%;
+}
+
+@media only screen and (min-width: 768px){
+  
+  /********* heading and search input *********/
+  .heading {
+    text-align: left;
+    width: 65%;
+  }
+
+  #search {
+    width: 35%;
+  }
+
+  /************** main div ***************/
+  .employees-div {
+    width: 45%;
+    height: 160px;
+  }
+
+  .employees-icon {
+    width: 90px;
+    height: 90px;
+  }
+
+  .employees-email,
+  .employees-city,
+  .employees-username,
+  .employees-phone,
+  .employees-address,
+  .employees-birthday {
+    font-size: .9em;
+    
+  }
+
+  .employees-name {
+    font-size: 1em;
+  }
+
+  /********** modal window **********/
+  #overlay-inner {
+    width:90%;
+  }
+
+  #close {
+    top: 25%;
+    left: 65%;
+  }
+
+  #previous {
+    left: 10%;
+  }
+
+  #next {
+    right: 10%;
+  }
+
+}
+
+@media only screen and (min-width: 1024px){
+  
+  /********* heading and search input *********/
+  #search {
+    width: 25%;
+  }
+
+  /************** main div ***************/
+  .employees-div {
+    width: 30%;
+    height: 180px;
+  }
+
+  .employees-icon {
+    width: 110px;
+    height: 110px;
+  }
+
+  .employees-name {
+    font-size: 1.2em;
+  }
+
+  /********** modal window **********/
+  #overlay-inner {
+    width: 100%;
+  }
+
+  #close {
+    top: 20%;
+    left: 60%;
+  }
+
+  #previous {
+    left: 30%;
+  }
+
+  #next {
+    right: 30%;
+  }
+
+}
+
+
+
